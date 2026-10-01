@@ -1,0 +1,637 @@
+[
+  {
+    "title": "Layout-Guided Masking for GROBID: Lightweight Structural Gains in Large-Scale Scientific PDF Ingestion",
+    "authors": [
+      "Luca Foppiano",
+      "Sana Khamassi",
+      "Vipul Gupta"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Transforming scholarly PDFs into machine-readable fulltext remains a bottleneck for large-scale information systems. Recent vision-based parsers improve accuracy, but need GPUs and may introduce noise into the extracted text. GROBID, a modular font-stream parser running on CPU, is the de-facto standard for structuring scientific articles and underpins several of the largest open scholarly corpora. We pair it with a lightweight CPU detector localising figure, table, and paratext (header, footer, page number) regions, encoded as typed-area masks whose tokens are routed to GROBID's specialised models or discarded. On two PMC corpora, Bioinformatics (1,926 articles) and Materials Science (2,595), scored against JATS with a section-aware structural protocol, our extension improves over plain GROBID on most metrics (NS $+0.025$/$+0.013$; $+0.086$ paragraph recall on Materials Science, $d_z{=}1.08$), and caption-linked figure recovery improves on both corpora. On the external Table-BRGM benchmark, table detection recovers F1 $0.16 \\to 0.94$ and table structure follows (GriTS-Top $0.27 \\to 0.78$, below the strongest GPU system). On body text, against four vision-based systems (Docling, MinerU, olmOCR, dots.ocr), it has the best paragraph precision on both corpora, the best section detection on Materials Science, and a character error rate within 0.004 of the best GPU parser. End-to-end on CPU, it costs $2.7$--$3.2\\times$ less than the cheapest GPU system (Docling) and $10$--$14\\times$ less than generative parsers.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26381v1"
+  },
+  {
+    "title": "KwaiMind Technical Report",
+    "authors": [
+      "Junlong Wu",
+      "Zijun Li",
+      "Yuting Hu",
+      "Jia Sun",
+      "Pengcheng Wei",
+      "Yimin Zhou",
+      "Honglie Wang",
+      "Huaiqing Wang",
+      "Dewen Fan",
+      "Fei Zuo",
+      "Haixuan Gao",
+      "Lihui Peng",
+      "Tingxuan She",
+      "Yuqing Li",
+      "Boheng Zhang",
+      "Fan Yang",
+      "Wenwu Ou"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Commercial image editing requires product identity preservation, accurate text rendering, and user appeal alongside general editing quality. We present KwaiMind, an image editing system combining general capabilities with e-commerce specialization. An agent-based data engine maintains approximately 1.8 million high-quality editing pairs. Built on a multimodal diffusion transformer, KwaiMind undergoes continued pre-training and supervised fine-tuning, followed by preference optimization and online reinforcement learning. A general-purpose vision-language judge and specialized rewards for click-through rate (CTR), text rendering, and product consistency guide specialized policies, which are consolidated through on-policy distillation. We introduce Ecom-Bench, covering 11 commercial editing tasks with task-specific visual evaluation and CTR-based ranking. KwaiMind achieves the strongest overall scores among evaluated open-source editors on ImgEdit, GEdit, both language splits of REDEdit, and Ecom-Bench visual quality, and the highest aggregate CTR ranking score among compared systems. Offline, CTR-guided optimization increases the proportion of generated images whose predicted CTR exceeds that of the original product image from 12.16% to 37.41%. In an online A/B experiment, CTR-based selection of product main images yields an approximately 2.44% relative increase in actual CTR. These results demonstrate the value of domain-specific data and reward-driven alignment for commercial image editing.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26375v1"
+  },
+  {
+    "title": "DHSched: Stateless Control for Stateful Real-Time Avatar Serving",
+    "authors": [
+      "Xin Wang",
+      "Haitong Zhang",
+      "Xianghong Li",
+      "Shumin Lin",
+      "Xianzheng Song",
+      "Lin Wang",
+      "Zhenyu Xu"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Real-time avatar services run long-lived, GPU-backed sessions that transform a continuous text stream into speech, facial motion, rendered video, and RTC media. Elastic operation repeatedly reassigns these sessions across Workers. A reassignment updates shared placement state while the previous GPU runtime and RTC connection remain alive, opening a gap between control-plane assignment and execution authority. A stateful controller serializes ownership by retaining per-session authority, placing that state on the controller's scaling and failover path.\n  We present DHSched, a control plane that manages long-lived stateful sessions through stateless peer Dispatch replicas. DHSched externalizes session ownership as a generation identified by (WorkerID, epoch). Dispatch conditionally commits each generation. Infer-Controller claims and revalidates the same generation before releasing state-advancing input. A stale runtime loses execution authority even if it remains alive. DHSched ranks candidates from periodically refreshed load views while keeping capacity admission authoritative. Recovery advances the same generation path via source-epoch guards and source-independent reconstruction.\n  DHSched runs in our production avatar-serving stack, which reached 49,987 concurrent live sessions. On 10 June 2026, it completed 9,927 session migrations with no observed dual-owner conflicts or capacity overshoots. At the production peak, CreateLive latency was 98.3 ms at P99 and PushText latency was 16.5 ms at P99. Across 100,000 randomized ownership runs, assignment-time, claim-only, and WorkerID-only protocols permit stale execution, while DHSched records no dual-owner or stale-generation release.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26363v1"
+  },
+  {
+    "title": "Designing and Analysing Argument Mining Pipelines: Towards a Comprehensive Assessment",
+    "authors": [
+      "Siddharth Bhargava",
+      "Sara Tonelli",
+      "Patricia Mart\u00edn-Rodilla"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Argument Mining (AM) transforms natural language into its underlying argument structures. This transformation is typically realized through a sequence of AM tasks that form an end-to-end AM pipeline. However, AM approaches often differ in how they conceptualize these tasks, making direct comparisons between them difficult and opaque. This calls for a more nuanced, task-level analysis of AM approaches to enable clearer comparison and assessment.\n  This work presents a preliminary meta-study that systematically reviews several state-of-the-art end-to-end AM works and analyzes their pipelines through a triple-perspective framework---a linguistic, computational and domain perspective---to understand how the pipelines model arguments as structures, computes them, and integrates domain knowledge. We further propose a general design to the linguistic and computational perspectives, illustrating how key AM tasks are designed for modeling and computation of argument structures. Our proposed framework lays the groundwork for methodology-centered descriptions across AM approaches, facilitating deeper understanding and more systematic comparisons in future research.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26338v1"
+  },
+  {
+    "title": "Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping",
+    "authors": [
+      "Markus K\u00e4ppeler",
+      "Rohit Mohan",
+      "Abhinav Valada"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Camera-based 3D object detection and online vectorized HD mapping provide compact scene representations for autonomous driving, but both depend on accurate metric geometry and remain limited by depth ambiguity. Over long-term deployment, observations from repeated traversals can be accumulated into persistent point cloud priors that provide geometric context beyond the current observations. Existing explicit point cloud prior approaches, however, rely on LiDAR-based map construction and therefore require expensive 3D ranging sensors. We propose a framework that constructs a static point cloud prior map from previous camera traversals using Pi3X and augments each point with DINOv3 features. At runtime, a local prior patch is retrieved using global localization, encoded with a sparse voxel backbone, and fused in bird's-eye view (BEV) with lifted multi-view camera features. Task-specific sparse transformer heads then predict 3D objects and vectorized map elements from the fused representation. On Argoverse 2, the vision-based prior improves a strong baseline from 0.287 to 0.299 CDS and from 0.669 to 0.750 vectorized mapping mAP. Ablations show that semantic DINOv3 features are particularly important for vectorized mapping. These results demonstrate that vision-built geometric-semantic priors provide an effective form of long-term scene memory for camera-based perception, improving both tasks without LiDAR for prior-map construction or online inference.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26325v1"
+  },
+  {
+    "title": "PreGS: A Parameter-Transfer-Based Multi-Expert Graph Neural Network for Node Classification",
+    "authors": [
+      "Zhicong Cai",
+      "Yinglong Zhang",
+      "Xiaoying Hong",
+      "Xuewen Xia",
+      "Xing Xu"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Graph neural networks have achieved strong performance in node classification by aggregating information from graph neighborhoods. However, a single aggregation mechanism may be insufficient to capture diverse structural patterns across graph datasets. Moreover, independently training multiple structural branches can introduce substantial overhead without necessarily producing stable node representations. To address these issues, this paper proposes PreGS, a parameter-transfer-based multi-expert graph neural network framework. PreGS first pretrains a multi-head graph attention network (GAT) and transfers the linear transformation weights of its first-layer attention heads to multiple GraphSAGE experts. The transferred experts are frozen and used as complementary structural branches. The fused raw node features, GAT head representations, and GraphSAGE expert representations are fed into a multilayer perceptron (MLP), whose output is further fused with the pretrained GAT logits. Based on PreGS, we further develop PreGSv2, which introduces source-level weighting and a structural gating mechanism for adaptive multi-source feature integration. Experiments on eight public graph datasets show that PreGS and PreGSv2 achieve competitive performance against representative graph neural network baselines. Ablation, parameter-transfer, sensitivity, aggregator, visualization, and training-time analyses further validate the effectiveness and stability of the proposed framework. The code and datasets are available at https://github.com/LH-Czc/PreGS.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26310v1"
+  },
+  {
+    "title": "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model",
+    "authors": [
+      "Sinuo Wang",
+      "Zichong Gu",
+      "Yuhan Huang",
+      "Wenxin Wen",
+      "Xun Yang",
+      "Yiqing Zhang",
+      "Xingyu Zhang",
+      "Ningyu Che",
+      "Jie Ling",
+      "Qiankun Yu",
+      "Wei Liu",
+      "Jing Xu",
+      "Xinggang Wang"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Existing latent world models are typically optimized for future predictability, yet the resulting representations are not necessarily useful for planning in autonomous driving. Predictions are commonly used for pretraining or auxiliary supervision rather than as direct conditioning signals for trajectory generation. We propose ForeDrive, which learns a planning-relevant latent representation and couples it asymmetrically to a Diffusion Transformer (DiT) planner. The planner consumes multi-horizon latent future representations learned with a JEPA-style world model; planning gradients update the shared online encoder, while stop-gradient routing trains the latent predictor with forecasting losses only. Because predicted futures have varying reliability across horizons and BEV trajectories are misaligned with image tokens, we use gated visual fusion, future-status injection, and Trajectory-Adaptive Bias (TAB) to inject future latents as guidance without overriding the current observation. Trained with pure imitation learning and using only the current front-view image as visual input at inference, ForeDrive attains 89.9 PDMS on NAVSIM v1 and 90.0 one-stage EPDMS on NAVSIM v2, without reinforcement learning or an external trajectory scorer.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26299v1"
+  },
+  {
+    "title": "Rethinking Pairwise Token Interaction in Spiking Transformers",
+    "authors": [
+      "Sicheng Shen",
+      "Dongcheng Zhao",
+      "Zhiyuan Li",
+      "Jinyan Yu",
+      "Qian Zhang",
+      "Dengpeng Xing",
+      "Zhitong Zhang",
+      "Tielin Zhang"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Spiking Transformers inherit token interaction mechanisms from conventional Transformers, yet their sparse binary representations fundamentally alter how token-to-token communication is established. In particular, spike-based query-key matching produces highly sparse and input-dependent interaction patterns, coupling information propagation to the instantaneous availability of matching spike events. This motivates a different interaction paradigm in which long-range communication does not rely solely on pairwise spike coincidence. We therefore propose Gated Spike Axial Propagation (GSAP), a spike-native token interaction mechanism that decouples information propagation from context selection. Instead of directly determining communication through query-key matching, GSAP first propagates spike-based context along the horizontal and vertical axes, allowing information to reach distant tokens through structured sequential propagation. A receiver-conditioned gate then determines how much of the propagated context is incorporated at each token, while a lightweight local pathway preserves fine-grained neighborhood information. In this way, GSAP reformulates token interaction as a propagate-then-select process, enabling structured long-range communication while retaining the sparse event-driven nature of spiking representations. Code is available at https://github.com/Fancyssc/GSAP.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26297v1"
+  },
+  {
+    "title": "EMERGE: Resolution-Agnostic Point Cloud Generation with Equivariant Graph-Based Diffusion",
+    "authors": [
+      "Ilias Mitsouras",
+      "Nikolaos Chaidos",
+      "Giorgos Stamou",
+      "Athanasios Voulodimos"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Point cloud generation has emerged as a crucial task for accurately capturing and reproducing the complexity of the physical world. However, existing generative approaches, predominantly relying on Transformers and Variational Autoencoders (VAEs), frequently ignore the continuous, non-grid topologies inherent to 3D spaces. Although the integration of graph-based structures has yielded significant benefits in related discriminative vision tasks, such geometric architectures remain noticeably absent from 3D generative modeling. To address this gap, we introduce EMERGE (Equivariant Multi-scale GNN for Resolution-agnostic point cloud GEneration), the first fully $SE(3)$-equivariant graph-based diffusion backbone explicitly designed to generate point clouds while preserving continuous spatial symmetries. Our framework bypasses the rigid resolution dependencies of standard generative pipelines, enabling zero-shot inference at multiple, arbitrary spatial resolutions. Extensive empirical evaluations demonstrate that EMERGE achieves State-of-the-Art generation quality across standard metrics, while the strong inherent geometric inductive biases enable significantly faster training convergence compared to existing baseline methods.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26039v1"
+  },
+  {
+    "title": "VideoX-Qwen: Data-Centric Instruction-Based Video Editing",
+    "authors": [
+      "JJiahang Li",
+      "Dingbao Shao",
+      "Xinyu Chen",
+      "Song Wu",
+      "Jiang Lin",
+      "Duo Li",
+      "Yuhang Liu",
+      "Jiaxin Hu",
+      "Shengrong Gu",
+      "Ying Tai",
+      "Zili Yi"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Progress in general-purpose video editing depends on constructing large-scale paired supervision and effectively adapting video-generation backbones to instruction-driven editing. Unlike video generation, video editing must execute a requested transformation while preserving unrelated subjects, scene structure, motion, and temporal continuity. We present VideoX-Qwen, an integrated data-construction and model-training framework for general instruction-based video editing. Our scalable production pipeline organizes specialized generation and understanding models into complementary routes for addition, removal, replacement, and attribute editing, followed by quality screening and instruction enrichment. It produces more than 1.2 million directional video-editing records, including over 400,000 records in each major task group, with an automatic acceptance rate of 89%. The resulting corpus provides broad and structured coverage of common editing operations through a unified source-instruction-target interface. We further develop a unified Qwen-Wan editor that combines multimodal semantic conditioning with dense source-video latent guidance. A progressive image-video training strategy aligns the multimodal instruction interface, adapts the video generator to source-conditioned editing, and refines output quality with selected high-resolution data. In a 100-example comparison with UniVideo and Kling O1, VideoX-Qwen achieves the best mean result on nine of eleven reported metrics, including instruction following, editing quality, content preservation, structural and perceptual similarity, and video-distribution quality. Together, the large-scale data-production system and unified training framework provide a practical foundation for more capable instruction-driven video editing.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26015v1"
+  },
+  {
+    "title": "MATES: Learning Multi-Agent Interactions by Transforming Observations for Frozen Single-Agent Policies",
+    "authors": [
+      "Elie Abboud",
+      "Oren Gal"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Multi-agent reinforcement learning (MARL) commonly trains decentralized policies from scratch, requiring agents to acquire individual task competence and coordination simultaneously. Yet many multi-agent problems admit a compatible single-agent counterpart in which the underlying task can be learned in isolation. We introduce Multi-Agent Observation Transformation for Existing Single-Agent Policies (MATES), an input-side adaptation framework for tasks whose multi-agent observations preserve the solo-task information while exposing separately identifiable neighbor information. From multi-agent experience, MATES learns a small adapter that maps this observation into the format expected by a frozen single-agent policy, inducing actions suited to the shared environment without updating the single-agent policy itself. MATES leaves the pretrained policy's internal architecture unchanged and retains the objectives and update procedures of the underlying MARL algorithm. We evaluate MATES using both on- and off-policy algorithms on lifelong pathfinding, navigation, and cooperative discovery, spanning discrete and continuous observation and action spaces. Across all evaluated settings, MATES optimizes only 3.5-7.3% as many parameters as full-policy training while consistently outperforming MARL training from scratch. It approaches the performance of full fine-tuning, remains competitive overall with demonstration-based baselines, and retains strong task performance at team sizes not encountered during training. These results provide evidence that, under this observation structure, effective multi-agent behavior can be learned without modifying the policy that encodes individual competence.",
+    "pdf_url": "https://arxiv.org/pdf/2609.26010v1"
+  },
+  {
+    "title": "Theory for groupoid equivariant neural networks: an approach for steerable CNNs on bounded domains",
+    "authors": [
+      "Alberto Ibort",
+      "Maria Jimenez-Vazquez",
+      "Juan M. Perez-Pardo"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Equivariant convolutional neural networks are usually built from a group acting globally on the space of signals. This hypothesis is inappropriate for many bounded or stratified domains: an ambient rigid motion may be admissible only on part of the domain, and the boundary introduces geometric types that are invisible to a transitive group action. We develop a theory of groupoid-equivariant neural networks in which the symmetry datum consists of a groupoid, a selected pseudogroup of local bisections, a measure, and input and output representation bundles. For integral channels on the object space, we prove a bisection-equivariant kernel theorem: equivariance is equivalent to a transport constraint on the two-point kernel, and its solutions are classified by one joint-stabilizer intertwiner on each orbit of pairs. As a case study we apply the theory to bounded planar domains.\n  The resulting architecture is implemented through offline nullspace bases and sparse gather--transform--scatter operations. A Poisson--Dirichlet kernel study is used separately to assess boundary-aware inductive bias; the exact inverse is shown to preserve the global symmetries of the rectangle but not general proper local bisections. The numerical results show that the proposed architectures provide significant advantages when symmetries cannot be globally implemented by group actions and provide an accuracy improvement of at least one order of magnitude with respect to the models tested.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25987v1"
+  },
+  {
+    "title": "Faithful Faithfulness Evaluations: Challenges & Pitfalls Learned from a Breast MRI Case Study",
+    "authors": [
+      "Peachapong Poolpol",
+      "Henrik H. J. Detjen",
+      "Eike Petersen"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Saliency maps are widely used to explain deep learning predictions in medical imaging, yet visually plausible explanations do not necessarily reflect a model's true decision process and may therefore mislead clinicians. We investigate this problem using a Vision Transformer-based breast MRI classifier trained on the ODELIA Breast MRI Challenge dataset and evaluate multiple saliency methods, including Last-layer Attention, Attention Rollout, Grad-SAM, Gradient Attention Rollout, GMAR, Grad-CAM, and HiResCAM. Our study highlights two often-overlooked challenges in perturbation-based faithfulness evaluation. First, method rankings depend strongly on the perturbation strategy, varying across intensity-based perturbations and transformer-based attention masking. Second, benchmarking saliency methods requires distinguishing between class-specific and class-agnostic explanations. To enable fair comparisons, we introduce non-class-specific variants of gradient-based methods and evaluate both settings separately. Across protocols, Grad-CAM and Gradient Attention Rollout consistently emerged as the strongest class-specific methods, although their relative ranking depended on the evaluation design. These findings expose important limitations of current saliency-based explainability approaches and highlight the need for more robust and standardized evaluation frameworks for trustworthy clinical AI systems.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25978v1"
+  },
+  {
+    "title": "GRIP: Gaussian Rendering as a Cross-Modal Bridge for Image-to-Point Cloud Registration",
+    "authors": [
+      "Karim Slimani",
+      "Catherine Achard",
+      "Eric Marchand",
+      "Brahim Tamadazte"
+    ],
+    "published": "2026-09-22",
+    "abstract": "This paper introduces GRIP, a pose-conditioned refinement framework for pixel-to-point matching and 2D to 3D registration. Given an initial coarse pose estimate, GRIP addresses the structural mismatch between grid based image descriptors and unordered point cloud descriptors by softly rendering learned 3D point features onto the image grid through Gaussian feature splatting. The rendered point derived feature map is then fused with image features by a pixel aligned transformer, enabling visual semantic and geometric cues to interact in a shared 2D representation. The refined features are decoded and propagated to finer resolutions for dense correspondence estimation and final pose refinement. Experiments on RGB D Scenes V2 and 7 Scenes demonstrate state of the art inlier ratio and competitive registration recall, with stronger performance under stricter evaluation thresholds.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25966v1"
+  },
+  {
+    "title": "GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression",
+    "authors": [
+      "Baher Mohammad",
+      "Ammar Ali",
+      "Stamatios Lefkimmiatis"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Transformer architectures exhibit cross-layer redundancies, yet post-training compression pipelines typically optimize layers in isolation or rely on heuristic grouping strategies that disregard layer-specific activation geometries. We introduce a principled, training-free framework that sequentially optimizes cross-layer weight pairings and shared-dictionary factorizations. Rather than forcing weights of adjacent layers to share a basis or heuristically merging activation statistics, our approach identifies structurally compatible projections and learns a shared representation that better preserves each layer's distinct calibration geometry. Coupled with structured sparsity, this yields highly efficient weight decompositions without sacrificing functional fidelity. Across diverse architectures, scales, and modalities, our method achieves state-of-the-art results, consistently outperforming independent structured weight decompositions and alternative pairwise weight factorizations, which operate under heuristic grouping strategies. By replacing heuristic engineering strategies with a convergent, optimization-driven pipeline, we establish a theoretically grounded foundation for scalable, transformer compression across different modalities.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25963v1"
+  },
+  {
+    "title": "Bridge of $\u03a8$'s: Quantum Circuit Optimization with Schr\u00f6dinger Bridges",
+    "authors": [
+      "Lino S. Hofstetter",
+      "Lia Yeh",
+      "Prakash Murali"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Quantum circuit optimization replaces a circuit with an equivalent one of fewer gates and lower depth, reducing execution cost and error rate. We ask whether a generative model can learn this transformation directly from examples, rather than selecting from a fixed rewrite library or rigid algebraic routines. We present Bridge of $\u03a8$'s (BOPS), a generative model based on Schr\u00f6dinger bridges, using a custom denoiser architecture, that learns a transformation from a source circuit into an equivalent optimized circuit. We train it on data constructed to be hard for existing optimizers, by applying rewrite rules backwards so that each input has a known lower-cost target. On held-out 8 qubits $\\times$ 64 depth Clifford+$T$ circuits, BOPS reduces gate count by $2.46\\times$ and depth by $2.45\\times$ in geometric mean, outperforming all nine baseline optimizers. This constitutes the first generative model bridging quantum circuits and frontier machine learning methods, opening up the quantum compilation stack to learned optimization along multiple axes.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25947v1"
+  },
+  {
+    "title": "On the Computational Complexity of Guided Berry Phase Estimation",
+    "authors": [
+      "Gabriel Waite"
+    ],
+    "published": "2026-09-22",
+    "abstract": "We prove that deciding the Berry phase for parameterised 2-local qubit Hamiltonians is BQP-complete when presented with a classical description of a guiding state, promised to overlap with the ground state of the system. Our results extend to systems with weighted Heisenberg interactions and when restricted to a 2D square or triangular lattice geometry. The techniques we develop leverage the Schrieffer--Wolff transformation, typically used in the construction of perturbative gadget reductions for local Hamiltonian problems, extending it to parameterised families of Hamiltonians. We demonstrate that there exists a choice of parameterised simulator Hamiltonians whose Berry phase well-approximates that of a parameterised target family. Using the perturbative gadget reduction framework of Oliveira and Terhal and of Schuch and Verstraete, we adapt the arguments to parameterised interactions and demonstrate the error bounds in the resulting simulation can be controlled. Additionally, we provide an explicit proof that families of 1-local Hamiltonians have a Berry phase that can be efficiently computed to inverse-polynomial precision. This establishes a complexity transition between 1-local and 2-local Hamiltonian families.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25929v1"
+  },
+  {
+    "title": "When Does Execution Provenance Help Agent Memory Retrieval?",
+    "authors": [
+      "Yiqi Wang",
+      "Jinqian Ju",
+      "Jiaqi Zhang",
+      "Zequn Sun",
+      "Yiqun Duan",
+      "Mingkai Zheng",
+      "Taotao Cai"
+    ],
+    "published": "2026-09-22",
+    "abstract": "A language agent's execution history can exceed its context window, requiring its memory system to retrieve complete supporting evidence under a hard token budget. Evidence may span multiple execution events, yet conventional retrievers use fixed token windows and fixed-k metrics that reward individual fragments without showing whether the complete evidence set fits in context. Smaller windows reduce irrelevant text but scatter evidence across candidates, while flat-versus-graph comparisons can conflate candidate design with graph propagation. To address these limitations, we formulate agent-memory retrieval as budgeted evidence completion and score exact gold spans in shared source coordinates. We first construct source-aligned provenance units from tool arguments and outputs. We then apply a zero-initialized residual R-GCN to refine frozen dense-retrieval scores over typed provenance edges. We evaluate 2,000 span-grounded memory queries over 1,207 held-out execution-grounded ISETrace trajectories. With matched Dense-FT scoring, provenance units improve Full Support@2048 by 19.07 points over flat 512-token windows and remain 11.96 points above a per-metric oracle over four flat chunk sizes; the pattern also holds with cross-encoder scoring. Holding the candidates and seed scores fixed, graph propagation adds 4.55 points in Full Support@2048 (95% CI [2.98, 6.18]). This gain is concentrated when gold evidence spans multiple events; entity co-occurrence expansion produces no comparable benefit, and relation and topology controls confirm dependence on typed transformations and observed graph structure. Overall, source-aligned candidates address the dominant granularity trade-off, while graph-conditioned propagation adds a smaller, targeted benefit for distributed evidence.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25913v1"
+  },
+  {
+    "title": "What is the Better Curriculum: Controller-Shaped Grasping Behavior for Contact Force-Sensitive Manipulation",
+    "authors": [
+      "Ziyan Feng",
+      "Zizhao Yuan",
+      "Yulong Fu",
+      "Yuxin He",
+      "Zhiyuan Zhang",
+      "Zhengjie Zhang",
+      "Jinni Zhou",
+      "Renjing Xu",
+      "Qiang Nie"
+    ],
+    "published": "2026-09-22",
+    "abstract": "How should a robot learn to manipulate objects so fragile that sub-Newton contact forces can cause irreversible damage? Existing visuo-tactile policy learning typically treats tactile sensing as an additional policy input. In direct-contact force-sensitive manipulation, however, the bottleneck can arise earlier, during data collection: manual gripper control is too delayed and coarse-grained to reliably maintain the narrow force range required for stable grasping. We therefore use a deterministic 25 Hz tactile reflex controller as a collection-time teacher, producing demonstrations with controller-shaped grasping behavior for tactile-free policy learning. On Action Chunking with Transformers (ACT), policies trained from reflex-shaped demonstrations recover the teacher's grasping profile and achieve 95% stable grasps on the nominal plastic-cup task, substantially outperforming visually screened manual demonstrations. The same intervention improves in-distribution stability on $\u03c0_{0.5}$ and shows a favorable exploratory trend on an unseen paper-cup variant. Under randomized external disturbance, however, the reflex-data $\u03c0_{0.5}$ policy still fails in 45% of policy-only trials, whereas a deployment-time reflex arbiter retains all grasps. These results reveal a new role for tactile feedback in force-sensitive manipulation: rather than integrating tactile into the policy, we use it as a collection-time teacher that shapes grasping behavior in demonstrations for policy learning, while disturbance rejection remains controller-dependent, revealing the boundary of tactile-free policy.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25887v1"
+  },
+  {
+    "title": "Delving into Asymmetric Information Dynamics for High-Fidelity Virtual Try-On",
+    "authors": [
+      "Zishu Qin",
+      "Zhiyu Jin",
+      "Pipei Huang",
+      "Hao Zhou"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Virtual try-on (VTON) requires precise pixel-level fidelity, yet mainstream Diffusion Transformers (DiTs) often suffer from texture degradation and structural drift. We identify symmetric interactions in standard joint-attention mechanisms as a source of these failures. Although such interactions support semantic flexibility in general-purpose editing, they allow stochastic noise to corrupt deterministic garment features in VTON. We analyze this problem through asymmetric information dynamics and introduce two diagnostic indicators: Conditional Attention Entropy (CAE) for feature unbiasedness and Injected Information Flux (IIF) for injection effectiveness. Our analysis suggests that symmetric bidirectional attention can corrupt conditional features and attenuate the conditional signal. To address these limitations, we propose RealFit, a framework that combines Unidirectional Information Flow (UIF) with Decoupled Timestep Modulation (DTM). UIF isolates the garment condition from stochastic noise to preserve garment identity, while DTM optimizes the modulation scale to maintain a strong conditional signal. The resulting time-invariant condition branch enables a conditional KV cache that reduces inference time by approximately 75%. RealFit offers a principled approach to conditional generation with state-of-the-art fidelity and efficiency.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25881v1"
+  },
+  {
+    "title": "Decoupling Logical Masks from GPU Execution for Dynamic Block-Sparse Attention",
+    "authors": [
+      "Shanghao Liu",
+      "Xiaoyun Yu",
+      "Wanting Li",
+      "Wenqi Jiang"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Attention computation makes inference expensive in video diffusion transformers (vDiTs), which generate videos through iterative denoising. Block-sparse attention (BSA) reduces\n  this cost by computing only blocks selected by a logical mask, which specifies attention interactions to compute. However, coupling logical block geometry to execution choices\n  limits adaptation to varying masks and graphics processing units (GPUs), while runtime kernel specialization can incur preparation overhead that outweighs execution time savings.\n  We present Tessera, a specialized runtime for dynamic BSA that decouples logical masks from GPU execution while preserving specified attention interactions. Its physical mapping\n  layer retains, combines, or subdivides logical attention blocks into physical tiles suited to different attention mask shapes and GPU architectures. Its task organization layer\n  groups and schedules tiles within GPU tasks to reuse data, expose parallelism, and overlap data movement with computation. Finally, profile-guided regime selection enables low-\n  overhead execution plan selection through a lookup table constructed from offline profiling. We implement Tessera with specialized CUDA kernels supporting four NVIDIA GPU\n  generations. Evaluated on 2,315 real attention masks and industrial video diffusion models, Tessera achieves up to 6.79x BSA request speedup over baseline systems in the evaluated\n  video diffusion models.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25869v1"
+  },
+  {
+    "title": "ARAFA: An LLM-Generated Arabic Fact-Checking Dataset",
+    "authors": [
+      "Christophe Khalil",
+      "Shady Elbassuoni",
+      "Rida Assaf"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Automatic fact-checking poses a significant challenge in Arabic natural language processing due to the scarcity of datasets and resources. In this manuscript, we introduce Arafa, a new large-scale dataset for fact-checking in Modern Standard Arabic, constructed through an automated framework leveraging large language models (LLMs). The dataset was constructed through a three-step pipeline: (1) claim generation from Arabic Wikipedia pages with supporting textual evidence, (2) claim mutation to generate challenging counterfactual claims with refuting evidence, and (3) an automatic validation step to validate that the generated claims are either supported or refuted by their accompanying evidence, or if the evidence does not provide enough information to judge the validity of the claims. The resulting dataset comprises 181,976 claim-evidence pairs labeled as supported, refuted, or not enough information. Human evaluation carried out on a test sample from the dataset demonstrated strong inter-annotator agreement (kappa = 0.89) using Cohen's Kappa for supported claims and (kappa = 0.94) for refuted claims. Automatic validation based on a human-evaluated sample achieved 86% accuracy for supported claims and 88% for refuted ones. To showcase Arafa's value as a resource for automatic Arabic fact-checking, four open-source transformer-based models were fine-tuned using Arafa, with the top-performing model achieving a Macro F1-score of 77% on the test data. In addition to Arafa being the first large-scale dataset for Arabic fact-checking, our framework presents a scalable approach for developing similar resources for other low-resource languages.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25833v1"
+  },
+  {
+    "title": "Latest Exact Match Attention",
+    "authors": [
+      "Moritz Br\u00f6samle"
+    ],
+    "published": "2026-09-22",
+    "abstract": "We introduce latest exact match attention (LEMA), an attention variant for transformers where queries and keys are binarized and each query attends only to the latest exactly matching key. We prove that LEMA transformers with chain of thought can simulate word-RAMs, as was recently shown for the less restrictive rightmost hard attention. In contrast to prior hard attention variants, the restriction to exact matches enables an efficient converse direction: word-RAMs can simulate LEMA transformers at a cost per token independent of the context length. Together, these results yield a close correspondence between the two computational models in terms of both compute and memory. Beyond the theory, we propose a training method for LEMA transformers that handles their non-differentiable operations with a straight-through estimator for the binarization and a soft attention surrogate annealed towards LEMA. On a synthetic associative recall task, LEMA models trained this way use their growing state to store and recall a large number of associations, outperforming gated DeltaNet (GDN) with its fixed state size. As a first scaling test, we train LEMA language models with up to 834 million parameters. They match softmax transformers of around half their size in loss and, on repeated rare phrases and a needle-retrieval task, remain behind softmax transformers but recall across longer distances than GDN models of comparable size. Finally, we implement dictionary-based inference for LEMA transformers and show constant generation speed comparable to GDN despite their growing state, with the dictionaries residing in main memory rather than VRAM. Code is available at https://github.com/moritzbroe/latest_exact_match_attention.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25802v1"
+  },
+  {
+    "title": "Evaluating Accuracy and Probabilistic Reliability of Zero-Shot Time Series Foundation Models",
+    "authors": [
+      "Panagiotis Michael",
+      "Moysis Symeonides",
+      "Demetris Trihinas"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Time Series Foundation Models (TSFMs) promise a paradigm shift toward zero-shot forecasting by eliminating task-specific training. However, existing works often overlook trade-offs between predictive accuracy and probabilistic calibration. This paper presents a benchmark study of six TSFMs evaluated on energy, traffic, and financial datasets. We contrast their performance against statistical baselines and a supervised DL model. The study reveals that while TSFMs outperform statistical methods and supervised models, they are subject to a fundamental trade-off between point accuracy and probabilistic reliability. Specifically, xLSTM architectures provide robust probabilistic calibration across horizons. In contrast, patch-based transformers offer competitive accuracy but face calibration issues at long horizons, while transformer-based models exhibit context saturation points for optimal zero-shot reasoning. These findings offer evidence-based guidance for balancing generalization and uncertainty quantification in real-world deployments.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25788v1"
+  },
+  {
+    "title": "Adaptive Traffic Camouflage: Causal and Resource-Aware Defense Against IoT Fingerprinting",
+    "authors": [
+      "Daniel Adu Worae",
+      "Spyridon Mastorakis",
+      "Nuno Moniz",
+      "Nitesh V. Chawla"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Encryption hides IoT payloads, but traffic shape can still reveal device identity through packet sizes, timing, direction, and packetization. We present Adaptive Traffic Camouflage, a causal, leakage-aware controller that characterizes traffic-shape leakage without runtime device labels and selects a budget-feasible transformation for the next traffic window from previous-window context. The controller chooses among padding, packet splitting, timing, and composite transformations, or leaves traffic unchanged when camouflage is unnecessary. We evaluate the design on CIC-IoT-2022, IoT Sentinel, and UNSW using classical and sequence-based fingerprinting models under clean-trained, defense-aware, and incremental-exposure settings, with fixed, random, and mean-bandwidth-matched baselines. Under the Balanced profile, camouflage reduces mean Macro-F1 by 13.2-23.3% relative to clean traffic with 4.88-7.47% average bandwidth overhead and at most 0.64 ms added latency. Under the larger Privacy profile, the reduction increases to 28.0-43.5%. Defense-aware training recovers much of the lost attacker performance on CIC-IoT-2022 and UNSW, while IoT Sentinel retains a substantial privacy gap. A non-causal same-window reference provides only modest additional benefit over previous-window control, and metadata-rich attackers remain effective outside the targeted traffic-shape surface. These results show that causal, resource-aware camouflage can reduce IoT traffic-shape fingerprintability under explicit communication constraints, while the persistence of protection depends on how readily the defended distribution can be learned.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25787v1"
+  },
+  {
+    "title": "Statistical Gains from Looped Estimation under Parameter Budgets",
+    "authors": [
+      "Xinyu Tian",
+      "Xiaotong Shen"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Growing memory demands in artificial intelligence motivate learning with fewer trainable parameters. We ask whether a looped estimator, which repeatedly applies one fitted operator with parameters shared across iterations, can improve statistical accuracy under a common parameter budget. Its conventional untied counterpart uses separate parameters at each iteration. For general likelihood models, we establish an upper bound on squared Hellinger risk for looped sieve maximum likelihood and a minimax lower bound over the tuned untied family. These bounds reveal a parameter--iteration--accuracy tradeoff: repeated computation can improve approximation without adding parameters, while increasing computational cost and fitted-class complexity. For targets of known H\u00f6lder smoothness, looped residual feedforward networks and a specified post-layer-normalized Transformer attain the minimax polynomial rate up to logarithmic factors with a fixed number of bounded real parameters. At sufficiently large fixed budgets, looped worst-case risk vanishes as sample size grows, whereas optimal worst-case untied risk remains bounded away from zero. Under specified growing-budget conditions, the loop-to-untied risk ratio also tends to zero. Gaussian and Laplace regression, binary response, and energy-based density estimation illustrate the theory.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25778v1"
+  },
+  {
+    "title": "The Limits of Simulated Societies: How Post-Training and Survey Fine-Tuning Erase Cross-Cultural Variance",
+    "authors": [
+      "Rojin Ziaei"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Using large language models (LLMs) to simulate diverse human populations has the potential to transform many aspects of computational social science, yet many evaluations score the average response rather than the spread of opinion within real groups. Here, we develop a diagnostic framework that measures point accuracy alongside dispersion retention, the ratio of predicted to human standard deviation ($\\dr$), on 10{,}000 respondent--question pairs from the World Values Survey (WVS) spanning twelve countries and six continents. We evaluate eleven zero-shot language models and five variants fine-tuned on WVS data with SFT, DPO, and GRPO. We identify a failure mode we term \\textit{consensus collapse}, where alignment training compresses outputs toward one stereotype per group. Along the post-training trajectory from the Llama~3.1 70B base to the Tulu~3 checkpoints, the first stage, supervised instruction tuning, removes half of the spread with minimal accuracy gain ($\\dr$ 1.22 to 0.59; accuracy $+0.9$ points), the later stages do not restore it, and a gap opens between WEIRD and non-WEIRD countries that survey fine-tuning then deepens while pursuing higher point accuracy. The most accurate model (Tulu~3 70B-DPO fine-tuned on WVS, 57.9\\%) keeps half the human spread overall ($\\dr = 0.50$) and 11\\% of it for Nigeria, against 0.70--0.87 for WEIRD countries. Raising the sampling temperature to 1.0 leaves the Wasserstein-1 distance ($\\wone$) to human distributions unchanged for both fine-tuned DPO models, and GRPO on Qwen~3.5 9B does not restore the spread under either an accuracy reward or a distribution-shaped reward. Mixing the aligned model with an unaligned prior raises $\\dr$ from 0.51 to 0.62 on a held-out split but leaves Nigeria at 0.36. Point accuracy alone therefore misjudges these simulators, and current post-training trades diversity for consensus.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25760v1"
+  },
+  {
+    "title": "Fysiverse-3D-Vision Technical Report: Generating Executable 3D Worlds from Images through Unified Spatial Reasoning",
+    "authors": [
+      "Dingkang Yang",
+      "Yizhou Liu",
+      "Wendong Cheng",
+      "Zizhi Chen",
+      "Shunli Wang",
+      "Yang Liu",
+      "Hongsheng Li",
+      "Lihua Zhang"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Generative models have advanced image-conditioned 3D content creation, yet generating controllable and executable 3D scenes from a single image remains challenging. Existing 3D generative approaches can synthesize visually plausible objects and scenes, but their spatial layout estimation is coupled with specific asset generators. They struggle to jointly model object semantics, metric geometry, and scene-level spatial relationships, which are essential for interactive editing, physical simulation, and embodied applications. We propose Fysiverse-3D-Vision, a unified vision-language-geometry framework for generative 3D scene reconstruction and executable asset construction from a single image. We establish a shared representation where spatial reasoning and geometric reconstruction mutually enhance each other, allowing object layouts to be inferred beyond the constraints of individual asset generators. Our model integrates textual supervision, semantic visual cues, and geometric representations within a unified Transformer to capture scene context, metric geometry, and object-level interactions. An object-conditioned layout module performs cross-attention between target object representations and global geometric features to predict object translation, rotation, and scale. Training progressively learns geometry-language alignment, introduces layout reasoning while preserving reconstruction capability, and refines physical consistency through collision-aware optimization. By separating spatial layout reasoning from asset synthesis, Fysiverse-3D-Vision provides an adaptable interface for interactive scene editing, object-level manipulations, and executable 3D content generation. Experiments demonstrate that our framework achieves superior geometric consistency, layout estimation, rendering quality, and physical property understanding compared with existing approaches.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25741v1"
+  },
+  {
+    "title": "LingLan: An Advancing Traditional Chinese Medicine Diagnosis LLM with Multimodal Data",
+    "authors": [
+      "Zheng Chen",
+      "Zhicheng Du",
+      "Haoxuan Li",
+      "Yingshan Liang",
+      "Peiwu Qin"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Though artificial intelligence (AI) increasingly transforms modern medicine, its integration into Traditional Chinese Medicine (TCM) has been relatively slow, primarily due to TCM's reliance on holistic, subjective diagnostic methods---namely Inspection, Auscultation and Olfaction, Inquiry, and Palpation(I-AOI-P)---which are difficult to align with quantitative, standardized medical systems. In this work, we introduce a Unification Framework for Multimodal Data (UFMD), which automatically processes tongue and pulse images into structured, clinically standard descriptions, integrating multi-source diagnostic information into a unified digital record of I-AOI-P process. Building on this structured data, we create LingLan-14B, a TCM-specific large language model fine-tuned via supervised learning to emulate the diagnostic logic and workflow of I-AOI-P process. Experimental results show that our method significantly enhances diagnostic accuracy, achieving a relative improvement of 103.5% over the baseline (62.72% vs. 30.82%) and reaching an F1-score of up to 82%.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25715v1"
+  },
+  {
+    "title": "Optimal Tradeoffs Between Network Size and Parameter Magnitude in Neural Approximation and Minimax Regression",
+    "authors": [
+      "Baicheng Li",
+      "Zuowei Shen",
+      "Haizhao Yang",
+      "Shijun Zhang"
+    ],
+    "published": "2026-09-22",
+    "abstract": "The statistical accuracy of neural networks depends on both their approximation power and the complexity of the class fitted from data. While increasing network size is a natural way to improve approximation, parameter magnitude provides another resource whose role must be quantified in both respects. We establish a sharp width--magnitude tradeoff at fixed depth using one elementary bounded $1$-Lipschitz Dyadic--Triangular Activation. For the unit $\u03b2$-H\u00f6lder ball on $[0,1]^d$ with $0<\u03b2\\leq1$, the optimal $L^p$ approximation error for $0<p<\\infty$ is of order $[N^2\\log(eNT)]^{-\u03b2/d}$ when the network width satisfies $N\\geq2d+3$ and the parameter magnitudes are bounded by $T\\geq1$. Matching lower bounds hold for every fixed globally H\u00f6lder activation; its H\u00f6lder exponent affects the constants but not the rate. Under bounded design densities and independent centered sub-Gaussian noise, approximate least squares over the full clipped class at depth $23$ attains the classical H\u00f6lder minimax risk $\\mathcal{O}(M^{-\\frac{2\u03b2}{2\u03b2+d}})$ without logarithmic loss whenever $N^2\\log(eNT)\\asymp M^{\\frac{d}{2\u03b2+d}}$, where $M$ is the sample size. This yields a continuum of statistically optimal choices, ranging from unit parameter radius to fixed network size. At fixed size, four hidden layers with at most $8d+7$ nonzero parameters give a near-optimal radius, while six layers with at most $8d+27$ attain the optimal order $\\log T=\\mathcal{O}(\u03b7^{-d/\u03b2})$ at approximation error $\u03b7$. The same decoding method also yields fixed-size Transformer approximation.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25710v1"
+  },
+  {
+    "title": "C-to-Rust Fallacy: Automatic Refactoring != Memory Security",
+    "authors": [
+      "Hung-Mao Chen",
+      "Xu He",
+      "Bo Lu",
+      "Xiaokuan Zhang",
+      "Kun Sun"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Rust has emerged as the leading system programming language, offering strong memory and type safety guarantees without compromising performance. This positions it as a compelling alternative to traditional languages like C and C++, which are susceptible to memory security bugs. However, manually transforming C to Rust requires in-depth domain knowledge of the Rust language features, which requires significant effort for developers. To address this, tools for automatic C-to-Rust refactoring aim to generate safe Rust code leveraging static analysis and Large Language Models (LLMs). While these tools claim to achieve safety by reducing the unsafe Rust, the correlation with improving security is not clear. In this paper, we conduct a comprehensive empirical study on the reliability, safety, and correctness of various C-to-Rust refactoring methods. Specifically, we evaluate C2Rust-analyze, CROWN, C2SaferRust, and FLOURINE using a dataset of 116 C programs with memory security bugs from the NIST Juliet Test Suite. Based on 464 Rust programs generated by these tools, our evaluation focuses on three key aspects: the compilation correctness of the refactored programs, the effectiveness in mitigating original C bugs, and the tendency to introduce additional Rust bugs. The results indicate that 342 Rust programs fail to compile, 177 Rust programs inherit memory security bugs from the original C programs, and 77 new Rust bugs are introduced. We examine the rationale behind tool design and analyze the root cause of errors across various refactoring methods. Our findings indicate that current automated refactoring tools deliver memory safety as they define it, but not the broader memory security when adopting them.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25682v1"
+  },
+  {
+    "title": "Skill Sequence Planning for Collaborative Multi-Robot Construction",
+    "authors": [
+      "Xi Wang",
+      "Bo Fu",
+      "Carol C. Menassa",
+      "Vineet R. Kamat",
+      "Min Deng"
+    ],
+    "published": "2026-09-22",
+    "abstract": "Robots have significant potential to automate construction processes. However, their industry adoption remains limited, partly because of the programming effort required to adapt robots to diverse tasks. This paper presents a skill sequence planning method that enables a heterogeneous team of multi-functional robots to collaboratively perform construction assembly work using reusable, preprogrammed skills such as grasping, drilling, and fastening. A central controller transforms the digital representation of the building into a construction relationship graph that represents construction entities, their states, and their parent-child relationships. Based on this representation, the system selects the next construction target, generates a symbolic sequence of skills for capable members of the robot team, and produces collision-free geometric motion plans for skill execution. The symbolic planning problem is dynamically regenerated as the construction state changes. An interactive digital twin presents the planned skill sequence and robot states to human co-workers for review and approval before execution. The method is evaluated through a construction assembly case study. By reducing the need to program robots separately for each task variation, the proposed approach supports more flexible deployment of collaborative robot teams in construction.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25649v1"
+  },
+  {
+    "title": "When Quantum Meets AI: Quantum Methods for Machine Learning and Machine Learning Methods for Quantum Systems",
+    "authors": [
+      "Tak Hur"
+    ],
+    "published": "2026-09-22",
+    "abstract": "This thesis studies the intersection of quantum computing and artificial intelligence in two directions: quantum methods for machine learning and machine learning methods for quantum systems. For quantum machine learning, Neural Quantum Embedding learns data representations that increase the trace distance between embedded class ensembles, lowering an embedding-dependent bound on empirical risk and improving classification on noisy quantum hardware. A training objective based on the Hilbert-Schmidt inner product extends this approach to deterministic quantum computation with one qubit (DQC1) and is demonstrated on an NMR quantum processor. A margin-based generalization analysis then connects quantum neural network performance to quantum state discrimination. In the studied benchmarks, margin distributions predict generalization more reliably than parameter-count metrics. For quantum systems, a Mamba-based neural decoder for surface codes matches a reproduced Transformer baseline in memory experiments while reducing inference-cost scaling from quartic to quadratic in code distance. Under an explicit decoder-induced-noise model, it achieves lower logical error rates and a higher effective threshold. For neural quantum states, stochastic reconfiguration is interpreted as tangent-space ridge regression, with its diagonal shift controlling the bias-variance trade-off under finite Monte Carlo sampling. Multi-shift stochastic reconfiguration reduces checkpoint-local validation residuals and update variance relative to fixed-shift SR, at additional computational cost. Together, these contributions show how learned representations, statistical control, and hardware constraints shape the exchange between quantum computing and machine learning.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25641v1"
+  },
+  {
+    "title": "MachEmbodied-U0: Unified Understanding and Generation Model for Embodied Intelligence",
+    "authors": [
+      "Haoran Wen",
+      "Wenfu Wang",
+      "Kunsong Shi",
+      "Jingke Wang",
+      "Wancheng Feng",
+      "Yiren Zhang",
+      "Yueran Zhao",
+      "Xuancheng Zhang",
+      "Nanfei Ye",
+      "Xingru Chen",
+      "Zhaohong Sun",
+      "Chengmin Yang",
+      "Zikang Yu",
+      "Penghao Bi",
+      "Jia Shi",
+      "Yu Liu",
+      "Kun Zhan",
+      "Yan Xie"
+    ],
+    "published": "2026-09-22",
+    "abstract": "General-purpose robot control requires models to understand task intent, identify where to interact, capture how the scene evolves, and generate precise actions. Vision-language-action models provide strong semantic priors but typically do not explicitly model scene dynamics, while world-action models couple visual prediction with control without necessarily exposing the task-relevant semantic and spatial structure needed for fine-grained manipulation. We present MachEmbodied-U0 (ME-U0), a unified embodied foundation model connecting understanding and generation experts through a Mixture-of-Transformers architecture. Subtask prediction and affordance grounding guide joint visual-dynamics and action generation via flow matching. Visual dynamics encompass future RGB, depth, surface normals, and optical flow, providing complementary supervision for appearance, geometry, and motion. Multi-rate Rotary Position Encoding (MRPE) aligns visual dynamics with fine-grained control. We pretrain ME-U0 on approximately 4,200 hours of curated demonstrations from robotic datasets and egocentric datasets. Using only the supervision natively available in each downstream benchmark, ME-U0 achieves an average score of 17.66 on the RoboDojo simulation benchmark and average success rates of 99.0\\% and 82.5\\% on LIBERO and LIBERO-Plus, respectively. We additionally validate ME-U0 on real-world robotic manipulation tasks, demonstrating its effectiveness beyond simulation. Without corresponding downstream supervision, ME-U0 further demonstrates zero-shot subtask prediction, affordance grounding, and visual dynamics on simulated and real-world observations. Overall, ME-U0 combines competitive downstream control performance with transferable task-grounding and visual-dynamics capabilities across simulation and the real world.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25627v1"
+  },
+  {
+    "title": "Transformer Heads Looking for Order",
+    "authors": [
+      "Jasper van Doornmalen",
+      "Alexander Kozachinskiy",
+      "Corinna Mathwieser",
+      "Tomasz Steifer",
+      "Felipe Urrutia",
+      "Jos\u00e9 Verschae",
+      "Przemys\u0142aw Andrzej Wa\u0142\u0229ga"
+    ],
+    "published": "2026-09-22",
+    "abstract": "In this note, we show that the problem of checking, whether a sequence of bits is ordered, is not doable by 1-head 1-layer transformers but is doable by a 2-head 1-layer transformer. Unlike similar previous results, our results assume the model where transformers have an output MLP.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25588v1"
+  },
+  {
+    "title": "Dynamic Conformance Testing of WebGPU Through Specification-Driven Mutation",
+    "authors": [
+      "Mahya Samdaliri",
+      "Zhihao Yao",
+      "Kasthuri Jayarajah"
+    ],
+    "published": "2026-09-22",
+    "abstract": "WebGPU is a low-level graphics and compute API that exposes modern GPU functionality to web applications. While the official WebGPU Conformance Test Suite (CTS) focuses on well-formed usage under the WebGPU specification, it is not designed to stress implementations with semantic edge cases or adversarial inputs. General-purpose fuzzers, in contrast, struggle with WebGPU because of its complex graphics stack and multi-process architecture. We introduce LANTERN, a specification-guided dynamic conformance testing framework that mutates CTS tests using constraints extracted from the WebGPU specification. LANTERN extracts explicit syntactic API rules from WebIDL definitions and recovers semantic constraints, such as command ordering and object lifetimes, from natural-language specification text. Selected rules guide AST-located textual transformations that generate both valid and intentionally invalid CTS variants. We execute the resulting tests at scale on AddressSanitizer-instrumented Chromium to discover bugs. Our evaluation discovers three reproducible bugs, including a heap corruption, in Chromium versions current at the time of study. These results demonstrate that syntactically seeded, semantics-aware mutation of conformance tests provides a way to uncover browser bugs during WebGPU testing.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25520v1"
+  },
+  {
+    "title": "Spend Classification Without Leakage: An Evaluation Harness and What It Changed in a Deployed System",
+    "authors": [
+      "Harshit Gupta"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Assigning a standard commodity code to a free-text purchase line underpins enterprise spend analytics, and its reported accuracy cannot be checked. Published results use proprietary data or private samples under undocumented protocols; no two compare and there is no public benchmark. We build a harness with four protocols over 1.26 million labelled purchase lines from two US state governments. Enterprises rebuy continuously, so random splits put matching item text on both sides: 60.7% and 61.2% of test rows, 54.7% and 60.6% byte for byte. On California orders the best classical baseline scores 56.0% on repeated text but 31.9% on novel text, a 24-point gap widening with taxonomy depth. Embedding retrieval shrinks the gap from 23.8 to 19.1 points; a fine-tuned transformer does not escape it. On one corpus leaky evaluation cannot separate retrieval from the transformer, while three leak-free protocols put the transformer 2.3 to 3.6 points ahead, so leaky splits hide real differences, not just flatter both. We derive an upper bound on text-only classifiers from identical text with conflicting codes: 79.4% commodity accuracy on one corpus against 98.4% on the other, so accuracy does not compare across datasets. Spend-weighting the bound reflects the amount field more than labels. In a deployment of 920,927 lines, reviewers accepted 32.4% of suggestions on the novel-text population; 29.7-35.2% brackets benchmark rates near 31.9% and 34.8%. We release the harness in production use.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25502v1"
+  },
+  {
+    "title": "RGSQ: Riemannian Geometry-Sensitive Quantization for Large Vision-Language Models",
+    "authors": [
+      "Zhiping Wu",
+      "Dongdong Ren",
+      "Yangchengyu Zhou",
+      "Zhengjie Zhang",
+      "Wenbin Li",
+      "Hongbing Pan",
+      "Yang Gao"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Large vision-language models (VLMs) can be efficiently deployed under stringent memory and latency constraints through post training quantization (PTQ). However, most PTQ methods are designed for unimodal large language models (LLMs). These methods treat quantization errors as isotropic perturbations under the Euclidean assumption, which provides weak guidance on directions most sensitive to quantization in VLMs. Consequently, directly adapting unimodal PTQ approaches or solely employing modality-specific scaling often leads to uneven bit-width distribution and inconsistent performance in low-bit settings. To address these challenges, we propose Riemannian Geometry-Sensitive Quantization (RGSQ), which formulates quantization as a reconstruction problem under a unified Fisher-Riemannian metric. RGSQ identifies modality-specific sensitive directions via Riemannian manifold mappings built from modality-partitioned empirical Fisher factors and fused into a modality-aware Kronecker-structured metric. We then apply geometry-aligned rotations to reorient the local tangent frame, steering low-bit perturbations toward loss-insensitive axes. Finally, we apply a whitening transformation that maps the Riemannian objective to an equivalent Euclidean form, enabling standard unimodal PTQ methods to evaluate multimodal quantization error under their original assumptions. Across an extensive and diverse set of mainstream VLM benchmarks, RGSQ achieves the highest accuracy and stability under extremely low-bit settings (W2A8 and W3A8). It outperforms VLM-aware baselines, such as MBQ and MQuant, by up to 5.9% and surpasses single-modality improvements by up to 8.6%.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25492v1"
+  },
+  {
+    "title": "Real-Time Hand Gesture Recognition for OpenXR Using Transformer-Based Machine Learning",
+    "authors": [
+      "Salar Rezayani",
+      "Russell Butler"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Hand gesture recognition is a key component in human-computer interaction (HCI), enabling intuitive interfaces for applications in gaming, virtual reality (VR), robotics, and more. This study integrates transformer-based machine-learning models for real-time hand gesture recognition, using hand-tracking data captured through the OpenXR standard in Unity. We leverage positional data of hand joints and wrist rotation angles to train a custom gesture recognition system. By utilizing the sequential modeling capabilities of transformers, the system captures temporal dependencies within short gesture windows and classifies gestures robustly across hand orientations and sizes. The results show a significant improvement in gesture classification accuracy. Building on this, we outline how the approach can be extended toward detecting the flow of movement, i.e., the transitions between gestures, as future work.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25466v1"
+  },
+  {
+    "title": "Transformer-Informed Trajectory Optimization for Relative Motion in Cislunar Orbits",
+    "authors": [
+      "Walter J. Manuel",
+      "Yuji Takubo",
+      "Simone D'Amico"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Autonomous spacecraft guidance and control requires a fast solution to non-convex trajectory optimization, which can be accelerated by providing a near-optimal initial guess to an optimization protocol, i.e., warm-starting. A robust warm starting method is especially useful for rendezvous, proximity operations, and docking (RPOD) in cislunar space, where the underlying dynamics become severely nonlinear and chaotic compared to those in Earth orbit, especially at perilune. This paper extends the Autonomous Rendezvous Transformer (ART), a transformer-based warm-start trajectory generation method, to cislunar RPOD scenarios for the first time. To accurately and reliably solve the nonconvex optimal control problems (OCPs) posed by these scenarios, a new and enhanced version of ART, ART-TWIN (Two-Way INference), is introduced. Inspired by forward-backward shooting methods used in other trajectory design applications, ART-TWIN autoregressively generates two arcs, one from the initial state and one from the desired terminal state, that are patched together at the midpoint of the timeseries. When evaluated on a set of simulated rendezvous scenarios that are initialized at perilune, ART-TWIN is demonstrated to substantially accelerate convergence and increase feasibility guarantees when used as a warm-start to sequential convex programming (SCP), compared to convex relaxations and the original ART. These results illustrate the necessity of ART-TWIN's dual-arc generation to enable the viability of and gain benefits from using transformer-based warm-start methods in the most challenging areas of the cislunar dynamical regime.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25460v1"
+  },
+  {
+    "title": "Mean Velocity Matching: Rethinking Generative Dynamics in Diffusion Models",
+    "authors": [
+      "Yunhong Zhang",
+      "Changjie Cao",
+      "Zhihua Zhang",
+      "Bingli Liu",
+      "Zongjie Cao",
+      "Zongyong Cui",
+      "Ying Yang"
+    ],
+    "published": "2026-09-21",
+    "abstract": "This work studies prediction parameterization for stochastic generative dynamics in diffusion models. Existing velocity-based generative models provide the simplicity of learning a single transport field, but their standard formulation is deterministic, whereas stochastic extensions generally require additional score information or an intermediate velocity-to-score reconstruction. To retain single-field prediction while directly supporting stochastic reverse dynamics, this paper introduces Mean Velocity Matching (MVM). MVM constructs a Gaussian perturbation process for which the conditional expectation of a restoration-oriented velocity, $(x_0-x_t)/t$, directly forms the reverse-SDE drift. Consequently, a single learned field is sufficient to parameterize the stochastic reverse process without separately estimating or reconstructing the score. Because direct regression of this velocity becomes unbounded near $t=0$, MVM further introduces a $\\sqrt{t}$-scaled parameterization that preserves the reverse dynamics while yielding a bounded training target. The same learned field also induces a deterministic probability-flow ODE, enabling stochastic and deterministic sampling to be studied within a unified formulation. Experiments with Transformer-based generative models achieve an FID of $\\MVMImageNetThirtyTwoFID$ at \\MVMImageNetThirtyTwoNFE\\ NFE on ImageNet $32\\times32$ and $\\MVMImageNetTwoFiftySixFID$ at \\MVMImageNetTwoFiftySixNFE\\ NFE on ImageNet $256\\times256$. Controlled SDE--ODE comparisons further show that the ODE performs better under very low NFE, whereas the stochastic reverse process achieves lower FID when sufficient function evaluations are available. These results demonstrate that MVM provides a direct single-field parameterization of stochastic reverse dynamics while maintaining competitive generation quality.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25444v1"
+  },
+  {
+    "title": "PermuFormer: Multi-Task Pretraining for Permutation Representation in Algebraic Combinatorics",
+    "authors": [
+      "Henry Kvinge"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Diverse pretraining has been shown to be an effective method for learning reusable, domain-aware representations that provide a starting point for fine-tuning on downstream tasks. While much of the excitement in AI for math has been concentrated in the use of frontier reasoning models to solve well-specified problems through the medium of language, narrow, specialized models remain an important component of the AI for math ecosystem. In contrast to large language models, specialized models are usually trained directly on the mathematical objects themselves (e.g., graphs, sequences of numbers) rather than the textual descriptions that characterize these objects. However, the common practice of training specialists from scratch may limit their ability to develop domain-aware representations that capture the multifaceted nature of mathematics. In this paper, we describe an approach to pretraining for permutation-focused tasks in algebraic combinatorics. We introduce PermuFormer, an autoregressive transformer trained on a 2.8 billion token multi-task, multi-encoding corpus. We show that PermuFormer is an effective starting point for fine-tuning on basic tasks unseen during pretraining and more complex research-level tasks, frequently outperforming the same architecture trained from scratch, baseline MLPs, and a fine-tuned generic language model of comparable size. We also analyze some of the internal mechanisms by which PermuFormer learns to solve training tasks. For example, we show that while some tasks can be linearly decoded directly from the internal representation of the prompt, other tasks require multiple rounds of generation before the answer can be decoded.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25438v1"
+  },
+  {
+    "title": "From functioning to evolving: A complex systems perspective on future self-organised federated energy communities",
+    "authors": [
+      "Abdorasoul Ghasemi"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Energy networks face a paradigm shift driven by renewable integration, uncertainty about required flexibility, distributed markets, and smart demand. Increasing asset interactions, cyber dependencies on communication and computation systems, and the deployment of AI agents demand a holistic, system-wide approach to understand the system's emergent behaviour. These transformations affect energy generation, demand adaptation, grid operations, and market dynamics, forming a complex engineered \\emph{system of systems}. We argue that a complex-systems perspective can help to understand this evolution. Drawing lessons from two highly successful large-scale engineered systems, the Internet and agile software engineering, we highlight how prioritising design for evolution over traditional design for functionality enables energy systems to adapt to net-zero dynamics and handle unforeseen uncertainties. We discuss how the notion of federated energy communities (FEC), which aims for an open energy system with distributed coordination, aligns with this perspective. In FECs, each EC produces, stores, and manages its own energy, enabling it to trade with peers, respect grid constraints, and reach fair agreements. Beyond regulatory issues, the main challenge is identifying constraints that can orchestrate EC operations at the scale and reliability standards required of power networks, without unnecessarily limiting the innovation needed for system evolution. We then conclude with tentative design principles for future decentralised, self-organised energy networks through the lens of design for evolution, and how to apply them to a bottom-up architecture of autonomous energy communities.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25425v1"
+  },
+  {
+    "title": "PARTE: Plane-Assisted Robust Transformation Estimation for Point Cloud Registration",
+    "authors": [
+      "Abolfazl Babanazari",
+      "Carson Cramer",
+      "Tyler Summers",
+      "Carlos Nieto",
+      "Kaveh Fathian"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Global point-cloud registration remains challenging when limited overlap, repetitive geometry, and sensor noise produce correspondence sets dominated by outliers. Planar regions are particularly difficult for conventional point descriptors and are therefore often suppressed or discarded before matching. We present PARTE (Plane-Assisted Robust Transformation Estimation), a global registration method that instead treats planar structure as complementary registration evidence. PARTE extracts planar patches and represents them using our novel Plane Context Histogram (PCH), a descriptor that encodes the geometry surrounding each patch, while a two-level matching procedure identifies reliable plane correspondences. Candidate point and plane correspondences are combined in a confidence-weighted compatibility graph for joint outlier rejection, followed by rigid transformation estimation. When no usable plane correspondences are available, PARTE naturally reduces to point-only registration. We evaluate PARTE on 8,097 registration pairs across six indoor and outdoor benchmarks spanning dense RGB-D and sparse LiDAR measurements. Evaluations show PARTE achieves the highest overall success rate against 13 standard and state-of-the-art methods while maintaining low runtime. An open-source C++ implementation with Python bindings is provided at https://parte.pages.dev.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25375v1"
+  },
+  {
+    "title": "Learning from Humans for Proactive Assistance in Human-Robot Collaborative Transport",
+    "authors": [
+      "Elvin Yang",
+      "Christoforos Mavrogiannis"
+    ],
+    "published": "2026-09-21",
+    "abstract": "We focus on human-robot collaborative transport, a challenging task of broad relevance spanning logistics, manufacturing, and the home, in which a user and a robot work together to relocate a large or heavy object. To act as an effective partner, the robot should reduce the user's effort by contributing to efficient relocation of the object while remaining physically responsive to them. Prior work often addresses these capabilities separately, producing robots that may move the object efficiently but resist user input, or accommodate the user but depend on continuous guidance. Our key insight is that obstacle-constrained collaborative transport requires integrating predictions of human collaborative behavior with compliant robot control. To this end, we introduce PROACT, a framework for human-robot collaborative transport that incorporates anticipation into compliant whole-body control through a learned model of human collaborative behavior. Trained on a large-scale, real-world dataset of dyadic human transport demonstrations, our transformer architecture distills collaborative behavior into predictions of future object motion. Across 108 real-world trials with a 9-DoF mobile manipulator, PROACT reduces mean interaction work by 59.2\\% and 20.4\\%, and mean completion time by 12.9\\% and 6.9\\%, relative to compliance-only and MPC baselines, respectively. Footage from our experiments can be found at https://youtu.be/qAGvQfVPjbk.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25351v1"
+  },
+  {
+    "title": "GINIO: A Geometric SO(3)-Equivariant Interface for Neural Inertial Odometry",
+    "authors": [
+      "Chankyo Kim",
+      "Minghan Zhu",
+      "Tzu-Yuan Lin",
+      "Avantika Rattan",
+      "Maani Ghaffari"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Neural inertial odometry increasingly uses networks as learned measurements inside filtering pipelines. Such measurements should transform consistently under arbitrary IMU mounting conventions: their mean must transform as a vector, and their covariance must transform congruently as a second-order tensor. We present GINIO, a geometric SO(3)-equivariant interface for neural inertial odometry under arbitrary rotations of the IMU measurement frame. Given calibrated IMU windows, our framework predicts a motion measurement and uncertainty obeying these tensorial laws. To support efficient sensor-frame learning, we introduce Last-Frame Alignment (LFA), a deterministic preprocessing step that is provably equivalent to world-frame training for SO(3)-equivariant predictors. The connected estimator tracks sensor-local states such as IMU bias, separating nuisance estimation from the geometric law enforced by the learned measurement. We instantiate the same interface in filter-connected NIO, AirIO-style recurrent aerial prediction, EqNIO-style full-SO(3) canonicalization, and ResNet-style temporal backbones. On TLIO, GINIO achieves 2.018 m ID/SO(3) ATE while EqNIO degrades to 76.389 m, using 11.6x fewer FLOPs. On NanoBench, our AirIO-style instantiation improves ATE from 5.579 m to 1.430 m without external attitude input, and our ResNet-style instantiation reaches 0.581 m ATE versus 0.645 m for ResNet1D. On Fetch, GINIO empirically reduces unseen physical-remount ATE from 8.15 m to 0.50 m without retraining, demonstrating robustness beyond the exact coordinate-frame guarantee. For uncertainty, spectral covariance reduces covariance-equivariance error by over three orders of magnitude compared with a diagonal head.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25338v1"
+  },
+  {
+    "title": "JAMB: Joint Action-Motion Diffusion for Bimanual Manipulation",
+    "authors": [
+      "Chuyang Xiao",
+      "Peilin Meng",
+      "David Held"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Coordinated bimanual manipulation is challenging because the motion of either arm can alter the shared 3D scene and thereby affect the other arm. Yet most diffusion policies generate actions without explicitly modeling these future geometric consequences, while predictive variants typically use future state only as auxiliary supervision or fixed conditioning. We address this limitation by proposing JAMB, a diffusion policy that jointly denoises bimanual actions and future 3D point tracks. By allowing action and track hypotheses to evolve together within a shared Transformer, each can inform and refine the other throughout denoising. We further ground multimodal representations in a shared spatiotemporal coordinate system to facilitate geometry-aware interaction during joint denoising. We evaluate JAMB on diverse bimanual manipulation tasks in RoboTwin 2.0 and on a real-world robot, comparing it with action-only policies and alternative future-prediction approaches spanning different state representations and learning objectives. Across 16 simulation tasks, JAMB achieves an average success rate of 83.4%, outperforming the strongest baseline by 23.9 percentage points. On three real-world tasks, it outperforms the action-only and auxiliary geometry prediction methods by 50.0 and 21.2 percentage points, respectively. Beyond these performance gains, JAMB shows stronger generalization to cluttered scenes and out-of-distribution backgrounds than the evaluated baselines. Together, these results demonstrate the effectiveness of our joint action-motion modeling framework for coordinated bimanual manipulation. Our project website is available at https://jam-bimanual.github.io/",
+    "pdf_url": "https://arxiv.org/pdf/2609.25322v1"
+  },
+  {
+    "title": "Near-Optimal Online Metric Matching on $\u0394$-ary HST",
+    "authors": [
+      "Parth Gor",
+      "Sourya Roy",
+      "Kasturi Varadarajan"
+    ],
+    "published": "2026-09-21",
+    "abstract": "In the online metric matching problem, we have $n$ servers with known locations in some metric space. Requests arrive one-by-one at certain locations, and upon arrival a request must be matched to a server that was not matched to a previous request. The goal is to minimize the matching cost. For randomized algorithms with an oblivious adversary, the best known competitive ratio is obtained by embedding the metric space into an HST, and then solving the problem in the setting where the metric space is defined by the HST.\n  Bansal et al. (Algorithmica, 2014) introduced a framework for online metric matching where one develops an algorithm in a restricted reassignment model, and then transforms this into a true online algorithm. Using this framework, they obtained an expected competitive ratio of $O(\\log n)$ for HSTs; this also gives the best known competitive ratio of $O(\\log^2 n)$ for general metrics. In this paper, we revisit this framework with the aim of developing new algorithms. For HSTs where each node has at most $\u0394$ children, we develop an algorithm via this framework with an expected competitive ratio of $O((\\log\\log \u0394) \\cdot \\log \u0394)$. In particular, this ratio is independent of $n$, the number of servers/requests. It is near-optimal, as the expected competitive ratio of any algorithm is $\u03a9(\\log \u0394)$.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25292v1"
+  },
+  {
+    "title": "MedGate-Fusion: Integrating First-Encounter Semantic Narratives and Physiological Biomarkers for Prospective Stroke Risk Stratification",
+    "authors": [
+      "Hemn Khdr",
+      "Mohammad Noaeen",
+      "Karim Keshavjee",
+      "Aziz Guergachi",
+      "Zahra Shakeri"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Prospective stroke risk stratification in primary care is challenging because early risk signals are distributed across routine biomarkers and unstructured clinical narratives. We propose MedGate-Fusion, a multi-modal gated architecture that integrates transformer-based embeddings of first-encounter narratives with ten routinely recorded risk markers. We used electronic medical record data from the Canadian Primary Care Sentinel Surveillance Network (CPCSSN). Starting from 808,921 encounter-level observations, we constructed a first-encounter cohort and retained 102,736 unique patient records with non-empty narratives and sufficient data to evaluate a five-year stroke outcome. To reduce explicit target leakage from diagnostic mentions in notes, we applied dictionary-based redaction of stroke-related terms prior to semantic encoding.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25272v1"
+  },
+  {
+    "title": "TAILOR: Template-Preserving Augmentation for Long-Tailed Log Parsing",
+    "authors": [
+      "Sepideh Hodaeian",
+      "Zhenhao Li",
+      "An Ran Chen"
+    ],
+    "published": "2026-09-21",
+    "abstract": "Log parsing is essential for system log analysis because it supports tasks such as debugging, monitoring, and anomaly detection by transforming unstructured log messages into structured log templates. However, real-world log datasets exhibit highly imbalanced, long-tailed distributions, where a small number of frequent templates dominate while many rare templates appear only a few times. This imbalance causes evaluation results to be overly optimistic by allowing frequent templates to dominate benchmark metrics, while poor performance on rare yet operationally important events remains largely hidden. In this paper, we investigate the prevalence and impact of rare log groups, defined as log groups with fewer than five instances. Our empirical study on the widely used Loghub-2.0 benchmark shows that rare log groups account for nearly 20% of all templates but less than 0.01% of log messages. Because they contain only a handful of instances, all evaluated parsers experience substantial performance degradation on these groups. To address this challenge, we propose TAILOR, a log parsing framework that improves template inference for rare log groups through template-preserving augmentation. TAILOR enriches rare log groups with template- consistent log messages before template inference. The additional structural evidence helps distinguish static tokens from dynamic variables. Our experimental results show that TAILOR improves parsing accuracy on rare log groups by 19% over the strongest baseline while maintaining competitive performance on complete datasets. We further show that the proposed augmentation strategy generalizes across different LLM backbones and consistently improves existing LLM-based parsers without modifying their core architectures.",
+    "pdf_url": "https://arxiv.org/pdf/2609.25261v1"
+  }
+]
